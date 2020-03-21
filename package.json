@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+"
+    "url": "git+https://github.com/aseawright1/10.Employee_Tracker.git"
   },
-  "author": "",
+  "author": "Alek Seawright",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/aseawright1/10.Employee_Tracker/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/aseawright1/10.Employee_Tracker#readme",
   "dependencies": {
     "console.table": "^0.10.0",
     "inquirer": "^7.0.6",
