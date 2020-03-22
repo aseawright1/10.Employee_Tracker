@@ -1,5 +1,5 @@
 {
-  "name": "Employee_Tracker",
+  "name": "Employee_Mgmt_System",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aseawright1/10.Employee_Tracker.git"
+    "url": "git+https://github.com/aseawright1/10.Employee_Mgmt_System.git"
   },
   "author": "Alek Seawright",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aseawright1/10.Employee_Tracker/issues"
+    "url": "https://github.com/aseawright1/10.Employee_Mgmt_System/issues"
   },
-  "homepage": "https://github.com/aseawright1/10.Employee_Tracker#readme",
+  "homepage": "https://github.com/aseawright1/10.Employee_Mgmt_System#readme",
   "dependencies": {
     "console.table": "^0.10.0",
     "inquirer": "^7.0.6",
