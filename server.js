@@ -4,10 +4,10 @@ const inquirer = require("inquirer")
 
 const connection = mysql.createConnection({
     host: 'localhost',
-    port: 3000,
+    port: 8080,
     user: 'root',
     password: 'password',
-    database: 'employee-tracker.db'
+    database: 'employee_tracker_db'
 })
 connection.connect((err) => {
     if (err) throw (err)
