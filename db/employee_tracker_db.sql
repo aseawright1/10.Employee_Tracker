@@ -3,14 +3,14 @@ CREATE database employee_tracker_db;
 
 USE employee_tracker_db;
 
-CREATE TABLE department
+CREATE TABLE departments
 (
   dept_id INT NOT NULL AUTO_INCREMENT,
   dept_name VARCHAR(25) NULL,
   PRIMARY KEY (dept_id)
 );
 
-CREATE TABLE role
+CREATE TABLE roles
 (
   id INT NOT NULL AUTO_INCREMENT,
   title VARCHAR(25) NULL,

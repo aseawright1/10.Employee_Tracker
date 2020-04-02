@@ -36,6 +36,7 @@ function mainMenu() {
     })
 }
 
+// database modification functions below
 function viewAllEmps() {
     connection.query('SELECT * FROM employees', function(err, res) {
         if (err) throw err
@@ -58,19 +59,27 @@ function addEmps(first_name, last_name, role_id, mgr_id) {
             mgr_id: answer.newMgrID
         }, function (err, res) {
             if (err) throw err
-            console.log(`${answer.newFirstName} ${answer.newLastName} added to database`)
+            console.log('\n', `${answer.newFirstName} ${answer.newLastName} added to database`, '\n')
             mainMenu();
         })
     })
 }
 function viewDepts() {
-
+    connection.query('SELECT * FROM departments', function(err, res) {
+        if (err) throw err
+        console.table(res)
+        mainMenu()
+    })
 }
 function addDepts() {
 
 }
 function viewRoles() {
-
+    connection.query('SELECT * FROM roles', function(err, res) {
+        if (err) throw err
+        console.table(res)
+        mainMenu()
+    })
 }
 function addRoles() {
     
