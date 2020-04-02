@@ -4,7 +4,7 @@ const inquirer = require("inquirer")
 
 const connection = mysql.createConnection({
     host: 'localhost',
-    port: 8080,
+    port: 3306,
     user: 'root',
     password: 'password',
     database: 'employee_tracker_db'
@@ -14,7 +14,7 @@ connection.connect((err) => {
     mainMenu()
 })
 
-// main menu and prompts screen
+// main menu and prompts screen below
 function mainMenu() {
     inquirer.prompt({
         type: 'list',
