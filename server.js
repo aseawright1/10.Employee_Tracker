@@ -71,9 +71,24 @@ function viewDepts() {
         mainMenu()
     })
 }
-function addDepts() {
 
+function addDepts(dept_name, dept_id) {
+    inquirer.prompt([
+        { type: 'input', message: 'Department name', name: 'newDept'},
+        { type: 'input', message: 'Department ID', name: 'newDeptID'}
+    ])
+    .then((answer) => {
+        connection.query('INSERT INTO departments SET ?', {
+            dept_name: answer.newDept,
+            dept_id: answer.newDeptID
+        }, function (err, res) {
+            if (err) throw err
+            console.log('\n', `${answer.newDept} added to database`, '\n')
+            mainMenu();
+        })
+    })
 }
+
 function viewRoles() {
     connection.query('SELECT * FROM roles', function(err, res) {
         if (err) throw err
@@ -81,9 +96,41 @@ function viewRoles() {
         mainMenu()
     })
 }
-function addRoles() {
-    
+
+function addRoles(title, salary, dept_id) {
+    inquirer.prompt([
+        { type: 'input', message: 'Role title', name: 'newRole' },
+        { type: 'number', message: 'Role salary', name: 'newRoleSal' },
+        { type: 'input', message: 'Role department ID', name: 'newRoleDept' }
+    ])
+    .then(answer => {
+        connection.query('INSERT INTO roles SET ?', {
+            title: answer.newRole,
+            salary: answer.newRoleSal,
+            dept_id: answer.newRoleDept
+        }, function (err, res) {
+            if (err) throw err
+            console.log('\n', `${answer.newRole} added to database`, '\n')
+            mainMenu();
+        })
+    })
 }
+
 function updateRoles() {
-    
+    connection.query('SELECT * FROM employees', function(err, res) {
+        if (err) throw err
+        console.table(res)
+    }),
+    inquirer.prompt([
+        { type: 'number', message: 'Enter employee\'s ID', name: 'updEmpID' },
+        { type: 'number', message: 'Desired employee role ID', name: 'updEmpRoleID' }
+    ])
+    .then(answer => {
+        connection.query(`UPDATE employees SET role_id = ${answer.updEmpRoleID} WHERE id = ${answer.updEmpID}`,
+        function (err, res) {
+            if (err) throw err
+            console.log('\n', 'Role updated', '\n')
+            mainMenu();
+        })
+    })
 }
