@@ -44,6 +44,7 @@ function viewAllEmps() {
         mainMenu()
     })
 }
+
 function addEmps(first_name, last_name, role_id, mgr_id) {
     inquirer.prompt([
         { type: 'input', message: 'First name', name: 'newFirstName' },
@@ -64,6 +65,7 @@ function addEmps(first_name, last_name, role_id, mgr_id) {
         })
     })
 }
+
 function viewDepts() {
     connection.query('SELECT * FROM departments', function(err, res) {
         if (err) throw err
