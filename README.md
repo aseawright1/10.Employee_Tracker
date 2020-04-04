@@ -1,4 +1,4 @@
-# 10.Employee_Tracker
+# 10.Employee_Management_System
 
 ## What this project is
 This application prompts the user via command-line and allows them to choose between various options to manage their employee database. Users are able to view, update, and add new departments, roles, and employees to their database. The organizational structure follows the schema below:
