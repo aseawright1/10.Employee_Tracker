@@ -27,7 +27,7 @@ function mainMenu() {
             case 'View all employees': viewAllEmps(); break
             case 'Add employee': addEmps(); break
             case 'View departments': viewDepts(); break
-            case 'Add departments': addDepts(); break
+            case 'Add department': addDept(); break
             case 'View roles': viewRoles(); break
             case 'Add role': addRoles(); break
             case 'Update employee role': updateRoles(); break
@@ -72,16 +72,14 @@ function viewDepts() {
     })
 }
 
-function addDepts(dept_name, dept_id) {
+function addDept(dept_name) {
     inquirer.prompt([
-        { type: 'input', message: 'Department name', name: 'newDept'},
-        { type: 'input', message: 'Department ID', name: 'newDeptID'}
+        { type: 'input', message: 'Department name', name: 'newDept' },
     ])
-    .then((answer) => {
-        connection.query('INSERT INTO departments SET ?', {
-            dept_name: answer.newDept,
-            dept_id: answer.newDeptID
-        }, function (err, res) {
+    .then(answer => {
+        connection.query('INSERT INTO departments SET ?',
+        { dept_name: answer.newDept },
+        function (err, res) {
             if (err) throw err
             console.log('\n', `${answer.newDept} added to database`, '\n')
             mainMenu();
